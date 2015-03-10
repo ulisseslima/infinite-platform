@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BgBehaviour.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CameraBehaviour.cs">
     <Files>
-      <File FileName="Assets\BgBehaviour.cs" Line="18" Column="14" />
-      <File FileName="Assets\PipeBehaviour.cs" Line="24" Column="14" />
-      <File FileName="Assets\SpawnBehaviour.cs" Line="19" Column="24" />
+      <File FileName="Assets\PipeBehaviour.cs" Line="8" Column="2" />
+      <File FileName="Assets\BgBehaviour.cs" Line="20" Column="27" />
+      <File FileName="Assets\CameraBehaviour.cs" Line="50" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

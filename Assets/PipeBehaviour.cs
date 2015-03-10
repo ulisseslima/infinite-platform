@@ -4,12 +4,15 @@ using System.Collections;
 public class PipeBehaviour : MonoBehaviour
 {
 	public static float currentX;
+	public float verticalVariation;
+	public int rearrangeDelay;
 	bool seen = false;
 	GameObject go;
 
 	// Use this for initialization
 	void Start ()
 	{
+		setRandomY (verticalVariation);
 		go = transform.gameObject;
 	}
 	
@@ -20,12 +23,17 @@ public class PipeBehaviour : MonoBehaviour
 
 	void OnBecameInvisible ()
 	{
-		Debug.LogFormat ("pipe OnBecameInvisible ({0}) at {1}", getId (), Time.time);
+		//Debug.LogFormat ("pipe OnBecameInvisible ({0}) at {1}", getId (), Time.time);
 		if (seen) {
-			float x = currentX + CameraBehaviour._pipeDistance;
-			setX (x);
-			seen = false;
+			Invoke("rearrange", rearrangeDelay);
 		}
+	}
+
+	void rearrange ()
+	{
+		float x = currentX + CameraBehaviour._pipeDistance;
+		setX (x);
+		seen = false;
 	}
 
 	void OnBecameVisible ()
@@ -40,6 +48,13 @@ public class PipeBehaviour : MonoBehaviour
 		pos.x = x;
 		transform.position = pos;
 		currentX = pos.x;
+	}
+
+	void setRandomY (float variant)
+	{
+		Vector3 pos = transform.position;
+		pos.y = Random.Range (-variant, variant);
+		transform.position = pos;
 	}
 
 	int getId ()
